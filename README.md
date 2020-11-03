@@ -6,6 +6,6 @@
 
 ### Mis tutoriales:
 - ### Python essentials: [Ver documento](tutoriales/python/python-essentials.ipynb)
-- ### React Js: [Ver documento](tutoriales/react/react-essentials.md)
+- ### React: [Ver documento](tutoriales/react/react-essentials.md)
 
 
