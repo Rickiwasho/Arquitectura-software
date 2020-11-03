@@ -5,4 +5,4 @@
 - React Js: [Ver documento](tutorials/reactjs)
 
 ---
-### Cuadernillo de clases: [Ver documento](docs/tareas/cuadernillo.pdf)
+### Cuadernillo de clases: [Ver documento](docs/cuadernillo.pdf)
