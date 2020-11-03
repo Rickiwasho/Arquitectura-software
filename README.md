@@ -9,5 +9,6 @@
 - ### React: [Ver documento](/docs/tutoriales/react/react-essentials.md)
 ## Actividades:
 ### 1. [AtreidesBot for Slack](/actividades/Atreidesbot-slack/)
+    ![alt text](/actividades/Atreidesbot-slack/img.png)
 ### 2. [Docker](actividades/docker/)
 
