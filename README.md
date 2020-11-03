@@ -2,12 +2,12 @@
 
 
 
-### [Cuadernillo de clases](https://docs.google.com/document/d/1tk83BdHxWoIsKKACsBDRqfjEl_w9nC9XWIvy3faFVZE/edit?usp=sharing)
+## [Cuadernillo de clases](https://docs.google.com/document/d/1tk83BdHxWoIsKKACsBDRqfjEl_w9nC9XWIvy3faFVZE/edit?usp=sharing)
 
-### Mis tutoriales:
+## Mis tutoriales:
 - ### Python essentials: [Ver documento](/docs/tutoriales/python/python-essentials.ipynb)
 - ### React: [Ver documento](/docs/tutoriales/react/react-essentials.md)
-### Actividades:
-### 1.[AtreidesBot for Slack](/actividades/Atreidesbot-slack/)
-### 2.[Docker](actividades/docker/)
+## Actividades:
+### 1. [AtreidesBot for Slack](/actividades/Atreidesbot-slack/)
+### 2. [Docker](actividades/docker/)
 
