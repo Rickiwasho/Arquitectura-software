@@ -1,5 +1,8 @@
 # React Essentials      
-
+### Contenidos:
+- [Javascript](##Javascript)
+- [JSX](##JSX)
+- [Primeros pasos en React](##React)
 ## 1. Javascript     
 ### 1.1 Variables    
 Usamos **var**, **let** y **const** para declarar una variable. El alcance de var son las funciones, pero let y const son de alcance de bloque.     
@@ -9,14 +12,16 @@ En contraste a las variables, un arreglo puede almacenar multiples valores. Cada
 
 Un arreglo puede ser una colección de distintos tipos, de datos ordenados y puede reordenarse. También permite almacenar datos duplicados o no almacenar dato alguno.   
 
-##### Creando un arreglo    
+#### Creando un arreglo    
 Los arreglos se pueden crear de distintas formas. Es muy común usar const, en vez de let para declarar un arreglo, en este caso, no se podrá usar nuevamente el nombre del arreglo para crear variables.    
-
-const arr1 = [] //creando un arreglo vacío.   
+``` js
+const arr1 = [] 
+//creando un arreglo vacío.   
    
-const arr2 = ['h','o','l','a'] //creando un arreglo con elementos.   
-
-##### Métodos para manipular arreglos     
+const arr2 = ['h','o','l','a'] 
+//creando un arreglo con elementos.   
+```
+#### Métodos para manipular arreglos     
     
 Existen diferentes métodos para manipular arreglos, Estos son algunos de los métodos más comunes:   
 - **Array()**, crea un arreglo.      
@@ -57,30 +62,36 @@ En programación usamos diferentes tipos de loops para realizar tareas repetitiv
 ### 1.5 Scope
 La variable es una parte fundamental en la programación. Declaramos las variables para almacenar datos, pero estos pueden tener un alcance global, local o window.   
 Cuando usamos let y const, el alcance es de bloque (local), sin embargo, si la variable es declarada fuera de los curly brackets ({}), la variable pasa a ser global.
+
 ### 1.6 Object
 Todo puede ser un objeto. Los objetos tienen propiedades y las propiedades tienen valores, por lo que un objeto es un par clave-valor. El orden de la llave no está reservado o no hay orden. 
 
-##### Creando un objeto
-Para crear un objeto literal, usamos curly brackets.
-Ej:    
-const person = {} //Objeto vacío    
-const rectangle = { length:20, width:20,}
+#### Creando un objeto
+Para crear un objeto literal, usamos curly brackets.   
 
-##### Obteniendo valores de un arreglo
+```js    
+const person = {
+    // objeto vacío
+}     
+const rectangle = { length:20, width:20,}
+```
+#### Obteniendo valores de un arreglo
 Podemos acceder a los valores de un objeto usando dos métodos:
 - Usando **.** seguido del nombre clave.
 - Usando square brackets
-
-Ej:    
+ 
+```js
 const person = {
     firstName: 'Louis',
 }
 console.log(person.firstName)
 console.log(person['firstName'])
+```
 
-##### Creando métodos objeto
+#### Creando métodos objeto
 Generalmente se emplean los métodos objeto dentro de la descripción del objeto con la finalidad de modificar u obtener los atributos del objeto.
-Ej: 
+Ej:  
+```js
 const person = {
     firstName = 'Louis',
     lastName = 'Litt',
@@ -89,7 +100,8 @@ const person = {
         return `${this.firstName} ${this.lastName}`
     },
 }
-##### Métodos objeto
+```
+#### Métodos objeto
 Existen diferentes métodos para manipular un objeto. Algunos de los más populares son:
 - Object.assign
 - Object.keys
@@ -102,6 +114,8 @@ Una función es un bloque de código reutilizable diseñado para realizar una ta
 Las funciones hacen el código, limpio y fácil de leer, reutilizable y fácil de testear.   
 Las funciones pueden ser declaradas o creadas de distintas maneras:
 # PROFUNDIZAR!!!!!!!!!!!!!!!!!!!!!!
+
+
 ### 1.8 Higher order function
 ### 1.9 Destructuring and spreading
 ### 1.10 Functional programming
