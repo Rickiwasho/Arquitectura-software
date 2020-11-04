@@ -4,7 +4,7 @@
 
 
 
-## [course notes](https://docs.google.com/document/d/1tk83BdHxWoIsKKACsBDRqfjEl_w9nC9XWIvy3faFVZE/edit?usp=sharing)
+## [My Course notes](https://docs.google.com/document/d/1tk83BdHxWoIsKKACsBDRqfjEl_w9nC9XWIvy3faFVZE/edit?usp=sharing)
 
 ## My tutorials:
 - ### Python essentials: [click here!](/docs/tutoriales/python/python-essentials.ipynb)
