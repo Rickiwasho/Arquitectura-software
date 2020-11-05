@@ -10,8 +10,8 @@
 - ### Python essentials: [click here!](/docs/tutoriales/python/python-essentials.ipynb)
 - ### React: [click here!](/docs/tutoriales/react/react-essentials.md)
 ## Activities:
-### 1. [AtreidesBot for Slack](/actividades/Atreidesbot-slack/)
-<div align="center"><img src="/actividades/Atreidesbot-slack/img.png"></div>
+### 1. [AtreidesBot for Slack](/actividades/atreidesbot-slack/)
+<div align="center"><img src="/actividades/atreidesbot-slack/img.png"></div>
 
 ### 2. [Docker](actividades/docker/)
 ### 3. [RabbitMQ](actividades/rabbitmq/)
