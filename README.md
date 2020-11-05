@@ -14,4 +14,6 @@
 <div align="center"><img src="/actividades/Atreidesbot-slack/img.png"></div>
 
 ### 2. [Docker](actividades/docker/)
+### 3. [RabbitMQ](actividades/rabbitmq/)
+
 
