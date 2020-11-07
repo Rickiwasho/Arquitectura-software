@@ -42,7 +42,7 @@ Existen diferentes métodos para manipular arreglos, Estos son algunos de los m�
 - **shift()**, remueve el primer elemento del arreglo.   
 - **unshift(a)**, agrega un elemento al comienzo del arreglo.   
 
-### 1.3 Conditionals    
+### 1.3 Condicionales    
 Las declaraciones condicionales son usadas para hacer decisiones basadas en condiciones. Por defecto, las declaraciones en un script de Javascript son ejecutadas secuencialmente desde arriba hacia abajo.   
 - if(condition){}
 - if(condition){} else{}
@@ -59,11 +59,11 @@ En programación usamos diferentes tipos de loops para realizar tareas repetitiv
 - forEach
 - for in
 
-### 1.5 Scope
+### 1.5 Alcance
 La variable es una parte fundamental en la programación. Declaramos las variables para almacenar datos, pero estos pueden tener un alcance global, local o window.   
 Cuando usamos let y const, el alcance es de bloque (local), sin embargo, si la variable es declarada fuera de los curly brackets ({}), la variable pasa a ser global.
 
-### 1.6 Object
+### 1.6 Objetos
 Todo puede ser un objeto. Los objetos tienen propiedades y las propiedades tienen valores, por lo que un objeto es un par clave-valor. El orden de la llave no está reservado o no hay orden. 
 
 #### Creando un objeto
@@ -109,15 +109,113 @@ Existen diferentes métodos para manipular un objeto. Algunos de los más popula
 - Object.entries
 - hasOwnProperty
 
-### 1.7 Functions
+### 1.7 Funciones
 Una función es un bloque de código reutilizable diseñado para realizar una tarea en específico. Una función es declarada con un nombre y seguido de un paréntesis (). El paréntesis puede tomar parámetros (llamados argumentos) o no. Para extraer valores de una función, esta debe tener **return**, y para obtener el valor debemos llamar o invocar a la funcion.   
-Las funciones hacen el código, limpio y fácil de leer, reutilizable y fácil de testear.   
+Las funciones hacen el código, limpio y fácil de leer y testear, reutilizable, etc.   
 Las funciones pueden ser declaradas o creadas de distintas maneras:
+- _Declaration function_
+- _Expression funcion_
+- _Anonymous function_
+- _Arrow function_
+
 # PROFUNDIZAR!!!!!!!!!!!!!!!!!!!!!!
 
+### 1.8 Funciones de alto nivel
+Las funciones de alto nivel son fincione s que toman a otras funciones como sus parámetros o  que retornan a una función como valor de retorno.
+La función pasada como parámetro es llamada _Callback_.   
 
-### 1.8 Higher order function
-### 1.9 Destructuring and spreading
-### 1.10 Functional programming
+```js
+const callback = (n) => {
+    return n ** 2
+}
+function cube(callback, n){
+    return callback(n) * n 
+}
+```
+#### Ejecutando actividades en tiempo real
+- **setInterval:**
+Podemos usar setInterval con funciones de alto nivel para hacer actividades continuamente en ciertos intervalos de tiempo. El método setInterval (globalscope) toma una función callback y la duración(tiempo) como parámetros, esta duración es en milisegundos y el callback será llamado en ese intervalo de tiempo.
+```js
+function sayHello(){ // funcion callback
+    console.log('Hello') // acción de la funcion
+}
+setInterval(sayHello, 2000) //imprime hello cada 2 segundos
+```
+- **setTimeout:**
+Podemos usar setTimeout con funciones de alto nivel para ejecutar acciones en algún tiempo futuro. El método toma una función callback y la duración como parámetros. La duracion es en milisegundos y la función callback espera esa cantidad de tiempo.
+
+```js
+function sayHello(){
+    console.log('Hello')
+}
+setTimeout(sayHello,2000) //imprime hello después de esperar 2 segundos
+```
+
+### 1.9 Desestructuración y propagación
+#### Desestructuración:
+La desestrocturación es una forma de descomprimir arreglos y objetos, y asignarlos a una variable distinta. La desestructuración nos permite escriibir código limpio y legible.
+- **desestructurar arreglos:**
+Los arreglos son una lista de diferentes tipos de datos ordenados por su índice. 
+Podemos acceder a cada ítem del arreglo utilizando su índice e iterando con un loop.
+Si el tamaño del arreglo es pequeño es mejor acceder a sus elementos de la siguiente forma:
+
+```js
+const countries = ['Chile', 'Argentina', 'Perú']
+const [chi,arg,pe] = countries
+console.log(chi,arg,pe) // Chile, Argentina, Perú
+```
+Otros casos:
+
+```js
+const fullStack = [
+    ['HTML','CSS','JS','React'],
+    ['Node', 'Django', 'MongoDB']
+]
+const[frontend, backend] = fullstack
+console.log(frontend,backend)
+```
+Y si no estamos interesados en cada uno de los ítems del arreglo, podemos omitir alguno usando una coma en ese índice.
+
+```js
+const countries = ['chile', 'argentina', 'peru', 'bolivia']
+const [chi, arg, , bol] =  countries // se omite peru
+```
+También, podemos almacenar ciertos datos del arreglo en variables y el resto almacenarlo en un subarreglo
+```js
+const countries = [
+    'Chile',
+    'Argentina',
+    'Peru',
+    'Bolivia',
+]
+const [chi, ...rest] = countries
+console.log(chi, rest) //Chile, ["Argentina","Peru","Bolivia"]
+```
+- **Desestructurar objetos:**
+# FALTA PROFUNDIZAR!!!!
+
+#### Operador de propagación(spread) o Rest
+Cuando desestructuramos un arreglo usamos el operador de propagación(...) para obtener el resto de los elementos del arreglo.
+Podemos copiar un arreglo con spread (...)
+```js
+const nums = [0,1,2,3,4,5,6,7,8,9]
+const unidades = [...nums]
+```
+También, podemos copiar un objeto:
+```js
+const user = {
+    name: 'James',
+    age: '10 years',
+    genre: 'Male',
+}
+const copiedUser = {...user}
+```
+# FALTA PROFUNDIZAR!!!!
+
+### 1.10 Programación funcional
+La _programación funcional_ nos permite escribir un código más corto, limpio, y también resolver problemas complejos que serían complejos de resolver de forma convencional.
+
+#### 1. forEach
+Usamos forEach cuando queremos iterar 
 ### 1.11 Classes
 ### 1.12 Document object model (DOM)
