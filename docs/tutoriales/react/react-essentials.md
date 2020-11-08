@@ -75,7 +75,7 @@ const person = {
 }     
 const rectangle = { length:20, width:20,}
 ```
-#### Obteniendo valores de un arreglo
+#### Obteniendo valores de objeto
 Podemos acceder a los valores de un objeto usando dos métodos:
 - Usando **.** seguido del nombre clave.
 - Usando square brackets
@@ -113,12 +113,44 @@ Existen diferentes métodos para manipular un objeto. Algunos de los más popula
 Una función es un bloque de código reutilizable diseñado para realizar una tarea en específico. Una función es declarada con un nombre y seguido de un paréntesis (). El paréntesis puede tomar parámetros (llamados argumentos) o no. Para extraer valores de una función, esta debe tener **return**, y para obtener el valor debemos llamar o invocar a la funcion.   
 Las funciones hacen el código, limpio y fácil de leer y testear, reutilizable, etc.   
 Las funciones pueden ser declaradas o creadas de distintas maneras:
-- _Declaration function_
-- _Expression funcion_
-- _Anonymous function_
-- _Arrow function_
+#### Declaración de funciones:**
+```js
+function functionName(){ // declaración
+    // Lo que hace la función
+}
 
-# PROFUNDIZAR!!!!!!!!!!!!!!!!!!!!!!
+functionName() // llamando a la función para que ejecute su trabajo.
+```
+- **Funciones de flecha:**
+Las funciones de flecha o arrow function, tienen una sintaxis más corta que una expresión de función convencional, al sustituir la palabra function por => (fat arrow).
+```js
+const suma = (a,b) => a+b //Cuando la función es de una linea, su return es implícito
+const resultado = suma(1,5) 
+```
+- **Funciones anónimas:**
+Las funciones anónimas son aquellas que no tienen nombre.
+```js
+const fAnon= function(){
+    console.log("soy una funcion anonima")
+}
+```
+- **Funciones expresión:**
+Las funciones expresión son funciones anónimas. 
+Después de crear una funcion sin nombre, la asignamos a una variable, de esta forma, el valor que retorna la función es almacenado por la variable. 
+
+```js
+const square = function(n){
+    return n*n
+}
+console.log(square(2)) // 4
+```
+- **Funciones autoinvocadas:**
+Las funciones autoinvocadas son funciones anónimas que no necesitan ser llamadas para retornar un valor.
+```js
+;(function(n){
+    console.log(n*n)
+})(2) 
+```
 
 ### 1.8 Funciones de alto nivel
 Las funciones de alto nivel son fincione s que toman a otras funciones como sus parámetros o  que retornan a una función como valor de retorno.
@@ -216,6 +248,20 @@ const copiedUser = {...user}
 La _programación funcional_ nos permite escribir un código más corto, limpio, y también resolver problemas complejos que serían complejos de resolver de forma convencional.
 
 #### 1. forEach
-Usamos forEach cuando queremos iterar 
+Usamos forEach cuando queremos iterar sobre un arreglo. forEach es una función de alto nivel que toma un callback como parámetro. El método se usa sólo con arreglos y se usa sólo cuando se está interesado en trabajar con cada uno de los elementos o índices del arreglo.
+```js
+//Ejemplo: imprimir el índice y el elemento del arreglo
+const countries = ['Chile','Argentina','Peru']
+countries.forEach((country, i) =>  console.log(i, country.toUpperCase()))
+```
+```sh 
+0 "Chile"
+1 "Argentina"
+2 "Peru"
+```
+#### 2. map
+Usamos el método map cuando nos gustaría modificar un arreglo. Usamos el método map solo con arreglos y siemore retornamos un arreglo.
+
+
 ### 1.11 Classes
 ### 1.12 Document object model (DOM)
