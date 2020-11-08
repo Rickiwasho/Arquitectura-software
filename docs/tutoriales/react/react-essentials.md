@@ -1,9 +1,11 @@
 # React Essentials      
 ### Contenidos:
-- [Javascript](##Javascript)
-- [JSX](##JSX)
-- [Primeros pasos en React](##React)
-## 1. Javascript     
+
+- [Javascript](##-1.Javascript)
+
+- [JSX](##-2.JSX)
+
+## 1 Javascript     
 ### 1.1 Variables    
 Usamos **var**, **let** y **const** para declarar una variable. El alcance de var son las funciones, pero let y const son de alcance de bloque.     
 
@@ -427,3 +429,114 @@ El documento HTML está estructurado como un objeto Javascript. Cada elemento HT
 
 React no manipula directamente el DOM, a su vez, el DOM virtual de React se encargará de actualizar los cambios necesarios. Por lo tanto, no manipule directamente el DOM si está usando React. El único lugar donde debe trabajar con el DOM es en el archivo index.html.
 React es una aplicacion de una sola página porque todos los componentes se mostrarán en la página index.html y no habrá ningún otro HTML en toda la aplicación React.
+
+
+## 2.JSX
+JSX son las siglas de Javascript XML. JSX nos permite escribit elementos HTML con código Javascript. Un elemento HTML tiene tags de apertura y cierre, contenido y atributos en el tag de apertura.
+Sin embargo, algunos elementos HTML puede que no tengan contenido y tag de cierre, ellos son elementos autocerrados.
+Para crear elementos HTML en React no debemos usar _createElement()_, a su vez, debemos usar elementos JSX. Por lo tanto, JSX hace sencilla la tarea de escribir y agregar elementos HTML en React. JSX será convertido a Javascript en el navevador usando un transcompilador - [babel.js](http://babeljs.io/).
+Babel es una librería que transcompila JSX a Javascript puro.
+```js
+// Ejemplo de sintaxis JSX
+const jsxElement = <h1>soy un elemento JSX</h1>
+const data = <small>nov 8, 2020</small>
+```
+#### Elementos JSX
+```js
+const header = (
+    <header>
+        <h1>Título</h1>
+        <h2>subtitulo</h2>
+        <h3>subsubtitulo</h3>
+        <p>parrafo</p>
+        <small>8 oct, 2020</small>
+    </header>
+)
+```
+el elemento _header_ es un elemento principal para todos los elementos HTML internos y JSX debe estar envuelto por un elemento principal externo. Sin el elemento HTML _header_ u otro elemento HTML principal, el JSX anterior no es válido. 
+
+#### Comentando un elemento JSX
+```js
+{ 
+   /* Esto es un comentario */
+}
+```
+#### Renderizando un elemento JSX
+Para renderizar un elemento JSX a un documento HTML, debemos crear primero un index HTML. El index.html  será el único archivo HTML que tendrás en tu aplicación React. Por esta razón, decimos que cada aplicación React es una aplicación de una página.
+Podemos empezar con React de dos formas.
+1. usando create-react-app.
+create-react-app crea una bandeja de salida estándar del proyecto React y, debido a eso, muchas personas tienen dificultades para comprender cómo funciona React.
+    
+
+
+2. Usando CDN(red de distribución de contenidos).
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>titulo de pagina</title>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+    <script></script>
+  </body>
+</html>
+```
+El index.html anterior tiene un div con la clase root y un script. El _div_ root es la puerta de enlace para conectar todos los componentes React al index.html. En el tag script escribiremos nuestro Javascript, pero el script _type_ será _babel_. Babel va a transpilar el react JSX a Javascript puro en el navegador. 
+Añadiremos babel al script. Dentro de babel podremos escribir Javascipt, JSX y código React.
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>titulo de pagina</title>
+  </head>
+  <body>
+    <div class="root"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // our code goes here
+    </script>
+  </body>
+</html>
+```
+La librería de babel está enlazada a nuestro documento y ahora podemos hacer uso de ella. El siguiente paso es **importar React** y **ReactDOM** usando CDN o enlace. En orden para enlazar React y ReactDOM, vamos a adjuntar ambos paquetes desde CDN al body del index.html. Para testear si React está enlazado al index.html, podrías checkear usando _console.log(React)_ en la consola del navegador, deberías obtener un objeto. Si ves un objeto que contiene métodos React, entonces React está enlazado a tu proyecto mediante CDN.
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>titulo de pagina</title>
+  </head>
+
+  <body>
+    <div class="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      console.log(React)
+    </script>
+  </body>
+</html>
+```
+Ahora index.html tiene todo lo que necesitamos para escribir código React.
+
+
+## 3. Primeros pasos en React
+
+React es una librería de Javascript creada para construir una interfaz de usuario(UI) reusable y de una sola página(SPA).
+Cuando trabajamos con React no estamos interactuando directamente con el DOM. React tiene su manera de lidiar con la manipulación del DOM. React usa su DOM virtual para hacer cambios y actualizar sólo el elemento que necesita cambiar.
