@@ -73,7 +73,10 @@ Para crear un objeto literal, usamos curly brackets.
 const person = {
     // objeto vacío
 }     
-const rectangle = { length:20, width:20,}
+const rectangle = { 
+    length:20, 
+    width:20,
+}
 ```
 #### Obteniendo valores de objeto
 Podemos acceder a los valores de un objeto usando dos métodos:
@@ -113,7 +116,7 @@ Existen diferentes métodos para manipular un objeto. Algunos de los más popula
 Una función es un bloque de código reutilizable diseñado para realizar una tarea en específico. Una función es declarada con un nombre y seguido de un paréntesis (). El paréntesis puede tomar parámetros (llamados argumentos) o no. Para extraer valores de una función, esta debe tener **return**, y para obtener el valor debemos llamar o invocar a la funcion.   
 Las funciones hacen el código, limpio y fácil de leer y testear, reutilizable, etc.   
 Las funciones pueden ser declaradas o creadas de distintas maneras:
-#### Declaración de funciones:**
+#### Declaración de funciones
 ```js
 function functionName(){ // declaración
     // Lo que hace la función
@@ -224,7 +227,33 @@ const [chi, ...rest] = countries
 console.log(chi, rest) //Chile, ["Argentina","Peru","Bolivia"]
 ```
 - **Desestructurar objetos:**
-# FALTA PROFUNDIZAR!!!!
+Consideremos el siguiente objeto:
+```js
+const rectangle = {
+    width: 20,
+    height: 10,
+}
+```
+podemos acceder a los valores del objeto de la siguiente manera:
+```js
+let width = rectangle.width
+let height = rectangle.height
+// o también
+let width = rectangle[width]
+let height = rectangle[height]
+```
+Sin embargo, es posible acceder a estos valores desestructurando el objeto.
+Cuando desestructuramos un objeto, el nombre de la variable debe ser exactamente la misma que el key del objeto.
+
+```js
+const rectangle = {
+    width: 20,
+    height: 10,
+}
+let { width, height } = rectangle
+console.log(width, height, perimeter)
+```
+En este caso, perimeter tomará valor _undefined_, ya que no es key del objeto.
 
 #### Operador de propagación(spread) o Rest
 Cuando desestructuramos un arreglo usamos el operador de propagación(...) para obtener el resto de los elementos del arreglo.
@@ -260,8 +289,141 @@ countries.forEach((country, i) =>  console.log(i, country.toUpperCase()))
 2 "Peru"
 ```
 #### 2. map
-Usamos el método map cuando nos gustaría modificar un arreglo. Usamos el método map solo con arreglos y siemore retornamos un arreglo.
+Usamos el método map cuando deseamos modificar un arreglo. Usamos el método map sólo con arreglos, y este siempre retorna un arreglo.
+
+```js
+const countries = ['chile', 'china', 'peru', 'cuba']
+const newCountries = countries.map(function(country){
+    return country.toUpperCase()
+})
+console.log(newCountries)
+```
+De esta forma, podemos trabajar con arreglos sin utilizar ciclos for.
+
+# FALTA PROFUNDIZAR!!!!
+
+##### 3. filter
+##### 4. reduce
+##### 5. find
+##### 6. findIndex
+##### 7. some
+##### 8. every
 
 
-### 1.11 Classes
-### 1.12 Document object model (DOM)
+### 1.11 Clases
+Javascript es un lenguaje con programación orientada a objetos. Todo en Javascript son objetos, con sus propiedades y métodos. **Creamos una clase para crear un objeto**. 
+Una clase es como un objeto constructor, o un blueprint para crear objetos. Instanciamos una clase para crear un objeto. La clase define los atributos y comportamientos del objeto, mientras el objeto, en contraparte, representa la clase.
+
+Una vez que creamos la clase, podemos crear un objeto de esta cuantas veces queramos. La creación de un objeto a partir de una clase se llama instanciación de clases.
+#### Definiendo una clase
+Para definir una clase en Javascript necesitamos la palabra clave **class**, el nombre de la clase en CamelCase y curly brackets.
+```js
+class ClassName{
+    // codigo de clase 
+}
+```
+#### Instanciación de clase
+Significa crear un objeto a partir de una clase. Para esto necesitamos la palabra clave **new** y el nombre de la clase.
+```js
+class Person{ // Creamos una clase Person
+
+}
+const person = new Person() // Creamos un objeto persona
+```
+#### Constructor de clase
+El constructor es una función incorporada que nos permite crear un blueprint para nuestros objetos. La función constructor comienza con la palabra clave **constructor*, seguido de un paréntesis. Dentro del paréntesis introduciremos las propiedades del objeto como parámetro. Usamos la palabra clave *this* para adjuntar los parámetros del constructor con la clase.
+
+```js
+class Person{
+    constructor(firstName, lastName){
+        console.log(this)
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+}
+const person = new Person()
+console.log(person)
+```
+```sh
+Person {} 
+Person {firstName: undefined, lastName: undefined}
+```
+Cuando instanciamos, debemos entregar los valores de las propiedades.  
+```js
+const person1 = new Person('Pedro','Pérez')
+console.log(person1)
+```
+```sh
+Person {firstName:"Pedro", lastName:"Pérez"}
+```
+#### Métodos de clase
+Métodos permiten trabajar con la información de nuestros objetos.
+```js
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+  getFullName() { // Método que obtiene un compuesto de dos key values
+    const fullName = this.firstName + ' ' + this.lastName
+    return fullName
+  }
+}
+const person1 = new Person('Asabeneh', 'Yetayeh',)
+console.log(person1.getFullName())
+```
+#### getter
+Método que nos permite obtener los datos de un valor clave específico del objeto.
+```js
+class Person{
+    constructor( firstName, lastName){
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+    get getName(){
+        return this.firstName
+    }
+}
+const person1 = new Person('Pedro', 'Pérez')
+console.log(person1.getName)
+```
+#### setter
+Método que nos permite modificar un valor específico de algún key value del objeto. 
+```js
+class Person{
+    constructor( firstName, lastName){
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+    set getName(newName){
+        this.firstName = newName
+    }
+}
+const person1 = new Person('Pedro', 'Pérez')
+person1.setName = 'Jaime'
+```
+#### Método static
+La palabra reservada **static** define un método estático de una clase. Los métodos estáticos no son llamados en instancias de la clase. En vez, ellos son llamados por la clase misma. Estos a menudo son 
+# falta profundizar!!!!
+
+
+#### Herencia
+Usando herencia podemos acceeder a todas las propiedades de la clase padre. Esto reduce repetición de código.
+Si la clase Person es padre, entonces creemos una clase hijo, esta puede ser estudiante, maestro, programador, futbolista, etc.
+```js
+class Student extends Person{
+    saySomething(){
+        console.log("Soy el hijo de la clase padre Person")
+    }
+}
+const s1 = new Student('Javier', 'Tapia')
+console.log(s1.saySomething())
+```
+#### Métodos primordiales
+# falta profundizar!!!!!
+
+### 1.12 Document object Model (DOM)
+El documento HTML está estructurado como un objeto Javascript. Cada elemento HTML tiene propiedades diferentes que pueden ayudarnos a manipularlo. Es posible obtener, crear, agregar o eliminar elementos HTML usando Javascript.
+
+React no manipula directamente el DOM, a su vez, el DOM virtual de React se encargará de actualizar los cambios necesarios. Por lo tanto, no manipule directamente el DOM si está usando React. El único lugar donde debe trabajar con el DOM es en el archivo index.html.
+React es una aplicacion de una sola página porque todos los componentes se mostrarán en la página index.html y no habrá ningún otro HTML en toda la aplicación React.
