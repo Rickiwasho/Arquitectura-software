@@ -712,7 +712,8 @@ const techs = ['HTML','CSS','Javascript']
 const techFormatted = tech.map((tech)=> <li key={tech}>{tech}</li>)
 ```
 ## 3. Introducción a _create-react-app_ 
-En el capítulo 2 aprendimos sobre JSX y accedimos a los paquetes React y ReactDOM usando CND. Sin embargo, usaremos el paquete create-react-app para generar un proyecto React. El porqué radica en que nos permite ahorrar bastante tiempo y trabajo, ya que create-react-app tiene todo lo que necesitamos para desarrollar.
+En el capítulo 2 aprendimos sobre JSX y accedimos a los paquetes React y ReactDOM usando CND. Sin embargo, usaremos el paquete create-react-app para generar un proyecto React. El porqué radica en que nos permite ahorrar bastante tiempo y trabajo, ya que create-react-app tiene todo lo que necesitamos para desarrollar.    
+
 Partiremos explicando cada una de las herramientas que lo componen.
 
 ### Node
