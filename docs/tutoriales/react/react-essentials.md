@@ -671,8 +671,33 @@ Para apuntar a un elemento HTML usamos un nombre tag, id, class, un atributo o o
 En elementos JSX usamos className, en vez de class porque class es una palabra reservada en Javascript, similar al caso htmlFor en vez de for.
 
 Convengamos que id sea usado para referencias cuyo motivo sea distinto a dar estilo.   
-[Ejemplo de pagina](/examples/)
+[Ejemplo de pagina](/examples/add-style.html/)
 
+Hasta el momento hemos usado datos estáticos en los elementos JSX, pero también podemos pasar diferentes tipos de datos como datos dinámicos. Los datos dinámicos pueden ser string, números, booleanos, matrices u objetos.
+Para inyectar datos a un JSX usamos curly brackets.
+```js
+const welcome = 'Bienvenido'
+const title = 'Aprendiendo React'
+const subtitle = 'Libraria Javascript'
+const authorFirstName = 'Ricardo'
+const authorLastName = 'Coronado'
+const date = 'Oct 10, 2020'
+// Elemento JSX, header
+const header = (
+  <header>
+    <div className='header-wrapper'>
+      <h1>{welcome}</h1>
+      <h2>{title}</h2>
+      <h3>{subtitle}</h3>
+      <p>
+        Instructor: {authorFirstName} {authorLastName}
+      </p>
+      <small>Date: {date}</small>
+    </div>
+  </header>
+)
+```
+Podemos inyectar strings, números, booleanos y arreglos al JSX, pero no podemos inyectar directamente un objeto. Debemos extraer los valores del objeto o destructurar su contenido antes de inyectar los datos al elemento JSX. 
 
 ## 3. Primeros pasos en React
 
