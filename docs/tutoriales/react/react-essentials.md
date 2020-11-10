@@ -533,7 +533,145 @@ La librería de babel está enlazada a nuestro documento y ahora podemos hacer u
   </body>
 </html>
 ```
-Ahora index.html tiene todo lo que necesitamos para escribir código React.
+Ahora index.html tiene todo lo que necesita para escribir código React.
+Obtenemos el elemento root usando document.querySelect('.root') y asignemoslo a una variable llamada rootElement. Allí será el único lugar donde interactuaremos directamente con el DOM.
+
+Ahora que conocemos sobre JSX y sus elementos, vamos a renderizar un elemento JSX en el navegador, para hacerlo necesitamos las librerías React y ReactDOM, también babel para transpilar el JSX a código Javascript.
+El paquete ReactDOM tiene un método de renderizado. El método de renderizado toma dos argumentos: Un elemento JSX o componente y el documento Root. 
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>titulo de pagina</title>
+  </head>
+  <body>
+    <div class="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // para obtener el elemento root del html
+      const rootElement = document.querySelector('.root')
+      // Elemento JSX
+      const jsxElement = <h1>I am a JSX element</h1>
+
+      // Se renderiza el eleento JSX usando el paquete ReactDOM. ReactDOM tiene el método de renderizaje que toma dos argumentos.
+      ReactDOM.render(jsxElement, rootElement)
+    </script>
+  </body>
+</html>
+```
+Para renderizar más contenido, el elemento JSX debe tener más elementos HTML. Podemos crear un header, un título, subtitulo, parrafos, etc. Sin embargo, no debes olvidar que sólo podemos renderizar un elemento JSX a la vez.
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>titulo de pagina</title>
+  </head>
+  <body>
+    <div class="root"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const rootElement = document.querySelector('.root')
+      // JSX element
+      const header = (
+        <header>
+          <h1>Welcome to 30 Days Of React</h1>
+          <h2>Getting Started React</h2>
+          <h3>JavaScript Library</h3>
+          <p>Asabeneh Yetayeh</p>
+          <small>Oct 2, 2020</small>
+        </header>
+      )
+      ReactDOM.render(header, rootElement)
+    </script>
+  </body>
+</html>
+```
+Creamos un elemento JSX que empaqueta todos los elementos HTML que deseamos, pero ¿Qué pasa con el footer o el main?
+Para solucionar estos casos debemos aplicar el mismo principio.
+```js
+//Elemento JSX para el main
+const main = (
+  <main>
+    <p>Este es un párrafo</p>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </main>
+)
+```
+```js
+// Elemento JSX para el footer
+const footer = (
+  <footer>
+    <p>Copyright 2020</p>
+  </footer>
+)
+```
+Ahora que tenemos tres elementos JSX, debemos empaquetarlos en un elemento JSX padre o poniendolos en un array. Para incluir un elemento JSX dentro de otro se utilizan curly brackets, {} y es necesario llamar al elemento JSX dentro de estos.
+```js
+// Elemento JSX padre
+const app = (
+  <div>
+    {header}
+    {main}
+    {footer}
+  </div>
+)
+```
+#### Estilo y className en JSX
+Para agregar estilo a nuestros elementos JSX usamos estilo inline className. Debemos inyectarlo dentro del código usando curly brackets. Así, cada propiedad de CSS se vuelve una clave y cada valor de propiedad de CSS se convierte en un valor para el objeto.
+```js
+const header = (
+  <header
+    style={{ border: '2px solid orange', color: 'black', fontSize: '18px' }}
+  >
+    <h1>titulo</h1>
+    <h2>subtitulo</h2>
+    <h3>subsubtitulo</h3>
+    <p>parrafo</p>
+    <small>Oct 2, 2020</small>
+  </header>
+)
+// También podemos escribirlo de esta manera
+const style = { border: '2px solid orange', color: 'black', fontSize: '18px' }
+const header = (
+  <header style={style}>
+    <h1>titulo</h1>
+    <h2>subtitulo</h2>
+    <h3>subsubtitulo</h3>
+    <p>parrafo</p>
+    <small>Oct 2, 2020</small>
+  </header>
+)
+```
+Para apuntar a un elemento HTML usamos un nombre tag, id, class, un atributo o otros métodos. Es muy común que la gente use class, en vez de id.
+    
+En elementos JSX usamos className, en vez de class porque class es una palabra reservada en Javascript, similar al caso htmlFor en vez de for.
+
+Convengamos que id sea usado para referencias cuyo motivo sea distinto a dar estilo.
+[Ejemplo de pagina](../examples/add-style.html)
 
 
 ## 3. Primeros pasos en React
