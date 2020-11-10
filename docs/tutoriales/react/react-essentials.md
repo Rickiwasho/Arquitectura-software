@@ -3,7 +3,7 @@
 
 - [Javascript](##-1.Javascript)
 
-- [JSX](##-2.JSX)
+- [JSX](##-2.-JSX)
 
 ## 1 Javascript     
 ### 1.1 Variables    
@@ -431,7 +431,7 @@ React no manipula directamente el DOM, a su vez, el DOM virtual de React se enca
 React es una aplicacion de una sola página porque todos los componentes se mostrarán en la página index.html y no habrá ningún otro HTML en toda la aplicación React.
 
 
-## 2.JSX
+## 2. JSX
 JSX son las siglas de Javascript XML. JSX nos permite escribit elementos HTML con código Javascript. Un elemento HTML tiene tags de apertura y cierre, contenido y atributos en el tag de apertura.
 Sin embargo, algunos elementos HTML puede que no tengan contenido y tag de cierre, ellos son elementos autocerrados.
 Para crear elementos HTML en React no debemos usar _createElement()_, a su vez, debemos usar elementos JSX. Por lo tanto, JSX hace sencilla la tarea de escribir y agregar elementos HTML en React. JSX será convertido a Javascript en el navevador usando un transcompilador - [babel.js](http://babeljs.io/).
