@@ -670,8 +670,8 @@ Para apuntar a un elemento HTML usamos un nombre tag, id, class, un atributo o o
     
 En elementos JSX usamos className, en vez de class porque class es una palabra reservada en Javascript, similar al caso htmlFor en vez de for.
 
-Convengamos que id sea usado para referencias cuyo motivo sea distinto a dar estilo.
-[Ejemplo de pagina](../examples/add-style.html)
+Convengamos que id sea usado para referencias cuyo motivo sea distinto a dar estilo.   
+[Ejemplo de pagina](/examples/)
 
 
 ## 3. Primeros pasos en React
