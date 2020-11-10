@@ -640,8 +640,8 @@ const app = (
   </div>
 )
 ```
-#### Estilo y className en JSX
-Para agregar estilo a nuestros elementos JSX usamos estilo inline className. Debemos inyectarlo dentro del código usando curly brackets. Así, cada propiedad de CSS se vuelve una clave y cada valor de propiedad de CSS se convierte en un valor para el objeto.
+#### Style y className en JSX
+Para agregar estilo a nuestros elementos JSX usamos inline style o className. Inyectamos style dentro del código usando curly brackets. Así, cada propiedad de CSS se vuelve una clave y cada valor de propiedad de CSS se convierte en un valor para el objeto.
 ```js
 const header = (
   <header
@@ -698,8 +698,65 @@ const header = (
 )
 ```
 Podemos inyectar strings, números, booleanos y arreglos al JSX, pero no podemos inyectar directamente un objeto. Debemos extraer los valores del objeto o destructurar su contenido antes de inyectar los datos al elemento JSX. 
+Para darle formato a la lista de elementos debemos modificarlo antes de inyectarlo a JSX. Podemos modificar un arreglo usando _map_. Como desarrollador de React deberás adquirir un buen entendimiento sobre programación funcional (map, filter, reduce, find, some, every, etc).
+```js
+const techs =['HTML','CSS','Javascript']
+const techFormatted = techs.map((tech)=><li>{tech}<li>)
+```
+El siguiente ejemplo muestra una lista de elementos con el formato apropiado.
+![ejemplo](/examples/002-add-format.html)
+Sin embargo, tenemos un warning en consola que dice que cada list child debería tener una única key.   
+Asignemos a cada ítem una key única para remover el warning.
+```js
+const techs = ['HTML','CSS','Javascript']
+const techFormatted = tech.map((tech)=> <li key={tech}>{tech}</li>)
+```
+## 3. Introducción a _create-react-app_ 
+En el capítulo 2 aprendimos sobre JSX y accedimos a los paquetes React y ReactDOM usando CND. Sin embargo, usaremos el paquete create-react-app para generar un proyecto React. El porqué radica en que nos permite ahorrar bastante tiempo y trabajo, ya que create-react-app tiene todo lo que necesitamos para desarrollar.
+Partiremos explicando cada una de las herramientas que lo componen.
 
-## 3. Primeros pasos en React
+### Node
+Node es sistema en tiempo de ejecución de Javascript que permite a Javascript ejecutarse en el servidor. Una aplicación React comienza por defecto en localhost 3000. Create-react-app tiene configurado un server node para la aplicación React. Es por esto que necesitamos node y sus módulos.    
+Para saber la versión de node que tienes instalada en tu computador, deberás abrir un terminal y escribir lo siguiente:
+```sh
+node -v
+```
+### Módulo
+Una o varias funciones que pueden ser exportadas e importadas cuando sea necesario, pueden incluirse en un proyecto. En React, no usamos link para acceder a módulos o paquetes, sino que lo importamos
+```js
+//math.js
+export const addTwo = (a,b)=> a+b
+export const multiply = (a,b)=> a*b
+export const substract = (a,b)=> a-b
 
-React es una librería de Javascript creada para construir una interfaz de usuario(UI) reusable y de una sola página(SPA).
-Cuando trabajamos con React no estamos interactuando directamente con el DOM. React tiene su manera de lidiar con la manipulación del DOM. React usa su DOM virtual para hacer cambios y actualizar sólo el elemento que necesita cambiar.
+export default (function doSomeMath()){
+    return{
+        addTwo,
+        multiply,
+        subtract,
+    }
+})()
+```
+Ahora, importemos los módulos _math.js_ en otro archivo:
+```js
+// index.js
+// Para importar doSomeMath desde math.js con o sin extensión
+import doSomeMath from './math.js'
+// Para importar los otros módulos
+// Ya que los otros módulos no fueron umportados como default, debemos destructurar
+import { addTwo, multiply, subtract} from './math.js'
+import * as everything from 'math.js' //Para importar todo lo restante
+console.log(addTwo(2,5))
+console.log(doSomeMath.addTwo(5,5))
+console.log(everything)
+```
+### Paquetes
+Un paquete es un módulo o colección de módulos. React, ReactDOM son paquetes.
+### Node Package Manager (NPM)
+NPM nos permite usar, crear y destribuir paquetes Javascript.
+### Extensiones de VSCode útiles
+- Prettier
+- ESLint
+- Bracket Pair Colorizer
+- ES7 React/Redux/GraphQL/React-Native snippets
+### Create React App
