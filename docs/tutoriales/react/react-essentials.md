@@ -720,7 +720,7 @@ Partiremos explicando cada una de las herramientas que lo componen.
 Node es sistema en tiempo de ejecución de Javascript que permite a Javascript ejecutarse en el servidor. Una aplicación React comienza por defecto en localhost 3000. Create-react-app tiene configurado un server node para la aplicación React. Es por esto que necesitamos node y sus módulos.    
 Para saber la versión de node que tienes instalada en tu computador, deberás abrir un terminal y escribir lo siguiente:
 ```sh
-node -v
+$ node -v
 ```
 ### Módulo
 Una o varias funciones que pueden ser exportadas e importadas cuando sea necesario, pueden incluirse en un proyecto. En React, no usamos link para acceder a módulos o paquetes, sino que lo importamos
@@ -761,3 +761,117 @@ NPM nos permite usar, crear y destribuir paquetes Javascript.
 - Bracket Pair Colorizer
 - ES7 React/Redux/GraphQL/React-Native snippets
 ### Create React App
+Para crear un proyecto React puedes usar una de las siguientes vías:
+Abres un terminal y escribes el siguiente comando:
+```sh
+$ npx create-react-app nombre-proyecto
+```
+Pero si no te gusta escribir npx cada vez que creas un proyecto, deberás instalar el paquete create-react-app gobalmente en tu computador usando el siguiente comando:
+```sh 
+$ npm install -g create-react-app
+$ create-react-app nombre-proyecto
+```
+## 4. Tu primera aplicación React
+Primero deberás trasladarte por terminar a la carpeta donde deseas almacenar tu proyecto. Luego:
+```sh
+$ npx create-react-app nombre-proyecto
+$ cd nombre-proyecto
+$ npm start
+```
+Ahora tu aplicación debería correr en localhost 3000. Modifica App.js escribiendo algún texto, verás que la página muestra las modificaciones instantáneamente.   
+
+Para detener el server, presiona Ctrl + C en el terminal.  
+    
+Analicemos el template que ha creado create-react-app. En el template hay tres carpetas: node_modules, public y src. En adición, hay .gitignore, README.md, package.json y yarn.lock o package-lock.json.   
+- node_modules, guarda todos los paquetes necesarios para las aplicaciones React.
+- Public
+    - index.html, es el único archivo HTML que tenemos en la aplicacion.
+    - favicon.ico, un archivo icon.
+    - other images, open graph images(son imagenes que estás visibles cuando un link comparte en redes sociales).
+    - robots.txt, información, si es que la página permite web scraping.
+- src
+    - App.css y index.css, son archivos css
+    - index.js, un archivo js que nos permite conectar todos los componentes con el index.html
+    - App.js, un archivo donde usualmente se importa la mayoria de los componentes de presentación
+    - serviceWorker.js, es usado para agregar funciones de aplicaciones web progresivas.
+    - setupTest.js, para escribir casos de testing. 
+- package.json, lista de paquetes que la aplicación usa.
+- .gitignore, permite que archivos y carpetas no sean pusheadas a Github
+- README.md, archivo Markdown para escribir documentación.
+- yarn.lock o package-lock.json, significa bloquear la version del paquete.    
+
+Lo siguiente que vamos a hacer es borrar todos los archivos que no vayamos a necesitar por el momento.
+De la carpeta public, borraremos todos los archivos, con excepción de index.html. De la carpeta src, borraremos todo, excepto index.js.   
+    
+Escribamos en el archivo index.js. Primero que todo debemos importar React y ReactDOM. React nos permite escribir código JSX y ReactDOM para renderizar el código JSX en el DOM. ReactDOM tiene un método de renderizaje.
+
+```js 
+// En index.js
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+const jsxElement = <h1> Este es un elemento JSX </h1>
+const rootElement = document.getElementById('root')
+
+ReactDOM.render(jsxElement, rootElement)
+```
+Y en index.html escribiremos lo siguiente:
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500|Roboto:300,400,500&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <title>mi aplicacion react</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+Para ejecutar tu aplicación debes ejecutar el siguiente comando:
+```sh
+$ npm start
+```
+Escribamos más elementos JSX y para luego renderizarlos en el navegador.
+```js
+const header = (
+    <header>
+        <h1>Bienvenido</h1>
+        <h2>Iniciando el desarrollo con React</h2>
+        <h3>Una librería de Javascript</h3>
+    </header>
+)
+const main = (
+  <main>
+    <p>Prerequisite to get started react.js:</p>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  </main>
+)
+const footer = (
+  <footer>
+    <p>Copyright 2020</p>
+  </footer>
+)
+const app = (
+  <div>
+    {header}
+    {main}
+    {footer}
+  </div>
+)
+```
+### Añadiendo estilo a JSX

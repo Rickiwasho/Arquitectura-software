@@ -1,17 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const header = (
+  <header>
+      <h1>Bienvenido</h1>
+      <h2>Iniciando el desarrollo con React</h2>
+      <h3>Una librería de Javascript</h3>
+  </header>
+)
+const main = (
+  <main>
+    <p>Prerequisitos para inciar con react.js</p>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Javascript</li>
+    </ul>
+  </main>
+)
+const footer = (
+  <footer>
+    <p>Copyright 2020</p>
+  </footer>
+)
+const app = (
+  <div>
+    {header}
+    {main}
+    {footer}
+  </div>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+)
+const rootElement = document.getElementById('root')
+
+ReactDOM.render(app, rootElement)
