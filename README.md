@@ -7,8 +7,8 @@
 ## [My Course notes](https://docs.google.com/document/d/1tk83BdHxWoIsKKACsBDRqfjEl_w9nC9XWIvy3faFVZE/edit?usp=sharing)
 
 ## My tutorials:
-- ### Python essentials: [click here!](/docs/tutoriales/python/python-essentials.ipynb)
-- ### React: [click here!](/docs/tutoriales/react/react-essentials.md)
+- ### Python essentials: [click here!](/tutoriales/python/python-essentials.ipynb)
+- ### React: [click here!](/tutoriales/react/react-essentials.md)
 React es una librería de Javascript creada para construir una interfaz de usuario (UI) reusable y de una sola página (SPA).   
 Cuando trabajamos con React no estamos interactuando directamente con el DOM. React tiene su manera de lidiar con la manipulación del DOM. React usa su DOM virtual para hacer cambios y actualizar sólo el elemento que necesita cambiar.
 ## Activities:
