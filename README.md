@@ -9,8 +9,7 @@
 ## My tutorials:
 - ### Python essentials: [click here!](/tutoriales/python/python-essentials.ipynb)
 - ### React: [click here!](/tutoriales/react/react-essentials.md)
-React es una librería de Javascript creada para construir una interfaz de usuario (UI) reusable y de una sola página (SPA).   
-Cuando trabajamos con React no estamos interactuando directamente con el DOM. React tiene su manera de lidiar con la manipulación del DOM. React usa su DOM virtual para hacer cambios y actualizar sólo el elemento que necesita cambiar.
+
 ## Activities:
 ### 1. [AtreidesBot for Slack](/actividades/atreidesbot-slack/)
 <div align="center"><img src="/actividades/atreidesbot-slack/img.png"></div>
