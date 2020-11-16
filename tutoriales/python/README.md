@@ -7,4 +7,4 @@
 - Computación científica
 - Introducción a inteligencia artificial
 
-## [Visita el tutorial aquí!](python-essentials.ipynb)) !!
+## Visita el tutorial haciendo clic [aquí!](python-essentials.ipynb) 
