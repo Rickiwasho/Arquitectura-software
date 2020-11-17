@@ -874,4 +874,35 @@ const app = (
   </div>
 )
 ```
-### Añadiendo estilo a JSX
+### Importando imgs, video, audio, etc
+Para importar imágenes  debes crear una carpeta en src y guardar imágenes adentro. Luego, importas:
+```js
+import funnyImage from './images/funnyimage.png'
+```
+Luego, para utilizarla, sólo basta con llamar su nombre:
+
+```js
+const user = (
+  <div>
+    <img src={funnyImage} alt="funny image"/>
+  </div>
+)
+```
+## 5. Componentes
+Un componente React es una pequeña y reusable pieza de código que es resposnsable de la aplicación UI. Una aplicación React es una agregación de componentes. React puede ayudarnos a crear componentes reutilizables. El siguiente diagrama muestra diferentes componentes. Todos los componentes tienes bordes de distintos colores. En react, nosotros asamblamos diferentes componentes juntas para crear una aplicación. Usamos funciones Javascript o classes para hacer componentes. Si usamos una función, el componente será un componente funcional, pero si usamos una clase, el componente será 'basado en clases'.    
+Los componentes pueden ser: 
+- Componentes funcionales/ Componentes de presentación / Componente sin estado / Componentes tontos
+- Componentes de clase / Componente contenedor / Componente con estado / Componente inteligente
+
+
+La clasificación de componentes anterior no sirve para las nuevas versiones de React, pero si, es buna para conocer la definición formal y cómo funcionaban las versiones anteriores.    
+De esta forma, cambiemos todo el JSX  a componentes. Las componentes en React son funciones o clases de Javascript que retornan JSX. El nombre del componente debe comenzar con una letra mayúscula y, en caso de ser un nombre compuesto de dos palabras, debe ir en formato camelcase. 
+
+### Visión general de las componentes
+Recordemos las funciones y clases de Javascript.
+```js
+// FUNCIONES!!!
+const getInfo = (firstName, lastName, country, title, skills) => {
+  return `${firstName} ${lastName} 
+}
+```
