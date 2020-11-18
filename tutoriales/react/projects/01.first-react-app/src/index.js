@@ -1,36 +1,67 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import ricardoImage from './images/ricardo.png'
 
-const header = (
+
+// Header Component
+const Header = () => (
   <header>
-      <h1>Bienvenido</h1>
-      <h2>Iniciando el desarrollo con React</h2>
-      <h3>Una librería de Javascript</h3>
+    <div className='header-wrapper'>
+      <h1>Welcome to 30 Days Of React</h1>
+      <h2>Getting Started React</h2>
+      <h3>JavaScript Library</h3>
+      <p>Asabeneh Yetayeh</p>
+      <small>Oct 17, 2020</small>
+    </div>
   </header>
 )
-const main = (
+
+// User Card Component
+const UserCard = () => (
+  <div className='user-card'>
+    <img src={ricardoImage} alt='ricardo image' />
+    <h2>Ricardo Coronado</h2>
+  </div>
+)
+
+// TechList Component
+const TechList = () => {
+  const techs = ['HTML', 'CSS', 'JavaScript']
+  const techsFormatted = techs.map((tech) => <li key={tech}>{tech}</li>)
+  return techsFormatted
+}
+
+// Main Component
+const Main = () => (
   <main>
-    <p>Prerequisitos para inciar con react.js</p>
-    <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>Javascript</li>
-    </ul>
+    <div className='main-wrapper'>
+      <p>Prerequisite to get started react.js:</p>
+      <ul>
+        <TechList />
+      </ul>
+      <UserCard />
+    </div>
   </main>
 )
-const footer = (
+
+// Footer Component
+const Footer = () => (
   <footer>
-    <p>Copyright 2020</p>
+    <div className='footer-wrapper'>
+      <p>Copyright 2020</p>
+    </div>
   </footer>
 )
-const app = (
-  <div>
-    {header}
-    {main}
-    {footer}
+
+// The App, or the parent or the container component
+const App = () => (
+  <div className='app'>
+    <Header />
+    <Main />
+    <Footer />
   </div>
-
 )
-const rootElement = document.getElementById('root')
 
-ReactDOM.render(app, rootElement)
+const rootElement = document.getElementById('root')
+// we render the App component using the ReactDOM package
+ReactDOM.render(<App />, rootElement)
