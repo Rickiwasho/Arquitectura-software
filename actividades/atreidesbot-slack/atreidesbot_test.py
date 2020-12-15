@@ -1,4 +1,4 @@
-from slack import WebClient
+from slack_sdk import WebClient
 from atreidesbot import AtreidesBot
 import os
 
