@@ -1,4 +1,4 @@
-# Hola mundo!!
+# Hola, bienvenido :)
 ## Este tutorial cubre los siguientes puntos:
 - Breve resumen de las funcionalidades de Python
 - Web Scraping 

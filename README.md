@@ -1,7 +1,4 @@
 # Arquitectura de software    (INFO229)
-### Universidad Austral de Chile
-####  Ricardo Coronado Mera
-
 
 
 ## [Mis apuntes](https://docs.google.com/document/d/1tk83BdHxWoIsKKACsBDRqfjEl_w9nC9XWIvy3faFVZE/edit?usp=sharing)
