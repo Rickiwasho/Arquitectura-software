@@ -3,7 +3,6 @@
 - Breve resumen de las funcionalidades de Python
 - Web Scraping 
 - Bases de datos con SQLite
-- Django
 - Computación científica
 - Introducción a inteligencia artificial
 
