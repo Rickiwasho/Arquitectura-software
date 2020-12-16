@@ -1,11 +1,17 @@
 # React Essentials      
 ### Contenidos:
 
-- [Javascript](##-1.Javascript)
+- [Javascript](#1.javascript)
 
-- [JSX](##-2.-JSX)
+- [JSX](#2.-jsx)
 
-## 1 Javascript     
+- [Introducción a _create-react-app_](#3.-introducción-a-_create-react-app_)
+
+- [Tu primera aplicación React](#4.-tu-primera-aplicación-react)
+
+- [Componentes](#5.-componentes)
+
+## 1. Javascript     
 ### 1.1 Variables    
 Usamos **var**, **let** y **const** para declarar una variable. El alcance de var son las funciones, pero let y const son de alcance de bloque.     
 
@@ -772,7 +778,7 @@ $ npm install -g create-react-app
 $ create-react-app nombre-proyecto
 ```
 ## 4. Tu primera aplicación React
-Primero deberás trasladarte por terminar a la carpeta donde deseas almacenar tu proyecto. Luego:
+Primero deberás trasladarte por terminal a la carpeta donde deseas almacenar tu proyecto. Luego:
 ```sh
 $ npx create-react-app nombre-proyecto
 $ cd nombre-proyecto
