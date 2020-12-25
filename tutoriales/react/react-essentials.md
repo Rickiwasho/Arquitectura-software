@@ -5,7 +5,7 @@
 
 - [JSX](#2.-jsx)
 
-- [Introducción a _create-react-app_](#3.-introducción-a-_create-react-app_)
+- [_create-react-app_](#3.-introducción-a-_create-react-app_)
 
 - [Tu primera aplicación React](#4.-tu-primera-aplicación-react)
 
@@ -962,7 +962,7 @@ const child = new Child(
 )
 ```
 ### Creando componentes react
-Usando una funciónde Javascript, podemos hacer componentes funcionales React.
+Usando una función de Javascript, podemos hacer componentes funcionales React.
 ``` js
 // sintaxis de componente react
 // puede ser una función de flecha, una función declaración o expresion
@@ -971,7 +971,7 @@ const ComponentName = () => {
   return jsx
 }
 ```
-La siguiente expresion es un elemento JSX
+La siguiente expresión es un elemento JSX
 ```js
 // Elemento JSX, header
 const header = ()
@@ -1027,10 +1027,10 @@ import ricardoImage from './images/ricardo.png'
 const Header = () => (
   <header>
     <div className='header-wrapper'>
-      <h1>Welcome to 30 Days Of React</h1>
-      <h2>Getting Started React</h2>
-      <h3>JavaScript Library</h3>
-      <p>Asabeneh Yetayeh</p>
+      <h1>Hola</h1>
+      <h2>Aprediendo React</h2>
+      <h3>Una libreria de JavaScript</h3>
+      <p>Ricardo Coronado</p>
       <small>Oct 3, 2020</small>
     </div>
   </header>
@@ -1040,7 +1040,7 @@ const Header = () => (
 const UserCard = () => (
   <div className='user-card'>
     <img src={ricardoImage} alt='ricardo image' />
-    <h2>Asabeneh Yetayeh</h2>
+    <h2>Ricardo Coronado</h2>
   </div>
 )
 
@@ -1055,7 +1055,7 @@ const TechList = () => {
 const Main = () => (
   <main>
     <div className='main-wrapper'>
-      <p>Prerequisite to get started react.js:</p>
+      <p>Prerequisitos para aprender react.js:</p>
       <ul>
         <TechList />
       </ul>
