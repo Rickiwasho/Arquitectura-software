@@ -4,6 +4,6 @@
 - Web Scraping 
 - Bases de datos con SQLite
 - Computación científica
-- Introducción a inteligencia artificial
+- Introducción a inteligencia artificial (Proximamente)
 
 ## Visita el tutorial haciendo clic [aquí!](python-essentials.ipynb) 
