@@ -10,6 +10,7 @@
 
 ## [Proyecto](/proyecto)
 
+
 ## Actividades:
 ### 1. [AtreidesBot](/actividades/atreidesbot-slack/)
 <div align="center"><img src="/actividades/atreidesbot-slack/img.png"></div>
