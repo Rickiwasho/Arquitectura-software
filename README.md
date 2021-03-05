@@ -12,10 +12,11 @@
 
 
 ## Actividades:
-### 1. [AtreidesBot](/actividades/atreidesbot-slack/)
+### 1. [AtreidesBot](/actividades/1.atreidesbot-slack/)
 <div align="center"><img src="/actividades/atreidesbot-slack/img.png"></div>
 
-### 2. [Docker](actividades/docker/)
-### 3. [RabbitMQ](actividades/rabbitmq/)
+### 2. [Docker](actividades/2.docker/)
+### 3. [RabbitMQ](actividades/3.rabbitmq/)
+### 4. [Pytest](actividades/4.pytest/)
 
 
