@@ -1,5 +1,5 @@
 import os
-import request
+import requests
 import logging
 from slack import WebClient
 
