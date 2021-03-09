@@ -13,7 +13,7 @@
 
 ## Actividades:
 ### 1. [AtreidesBot](/actividades/1.atreidesbot-slack/)
-<div align="center"><img src="/actividades/atreidesbot-slack/img.png"></div>
+<div align="center"><img src="/actividades/1.atreidesbot-slack/img.png"></div>
 
 ### 2. [Docker](actividades/2.docker/)
 ### 3. [RabbitMQ](actividades/3.rabbitmq/)
