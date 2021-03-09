@@ -4,10 +4,14 @@ import logging
 from slack_sdk import WebClient
 
 def checkPrices():
-    COIN = os.environ['COIN']
-    TARGET = os.environ['TARGET']
-    API_ENDPOINT = os.environ['API_ENDPOINTS']
-    FIAT = os.environ['FIAT']
+    #COIN = os.environ['CRYPTO']
+    COIN = 'litecoin'
+    TARGET = 45000
+    #TARGET = os.environ['TARGET']
+    #API_ENDPOINT = os.environ['API_ENDPOINTS']
+    API_ENDPOINT = 'https://api.coingecko.com/api/v3/simple/price'
+    #FIAT = os.environ['FIAT']
+    FIAT = 'usd'
     update = ''
     params = {
         'ids': COIN,
@@ -22,15 +26,19 @@ def checkPrices():
     return update
 
 def sendSlackMessage(msg):
-    token = os.environ['SLACK_API_TOKEN']
-    channel_id = os.environ['#crypto-alerts']
+    #token = os.environ['SLACK_API_TOKEN']
+    token = 'xoxb-1425355396916-1828783679762-qJ53Z1IrCSSaZGPr1yLTbAtL'
+    #channel_id = os.environ['#crypto-alerts']
+    channel_id = '#crypto-alerts'
     client = WebClient(token=token)
     response = client.chat_postMessage(channel =channel_id,text=msg)
     assert response['ok'] == 'true', response ['error']
     
+#sendSlackMessage(checkPrices())
 
 if __name__ == '__main__':
-    LOG_FILE = os.environ['LOG_FILE']
+    #LOG_FILE = os.environ['LOG_FILE']
+    LOG_FILE = '../bot.log'
     logging.basicConfig(filename=LOG_FILE, level=logging.DEBUG)
     update =checkPrices()
     if update:
