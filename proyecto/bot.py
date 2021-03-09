@@ -1,12 +1,12 @@
 import os
 import requests
 import logging
-from slack import WebClient
+from slack_sdk import WebClient
 
 def checkPrices():
     COIN = os.environ['COIN']
     TARGET = os.environ['TARGET']
-    API_ENDPOINT = os.environ['API_ENDPOINT']
+    API_ENDPOINT = os.environ['API_ENDPOINTS']
     FIAT = os.environ['FIAT']
     update = ''
     params = {
@@ -21,22 +21,22 @@ def checkPrices():
         update += '{0} is at {1}0'.format(COIN, price_at)
     return update
 
-    def sendSlackMessage(msg):
-        token = os.environ['SLACK_API_TOKEN']
-        channel_id = os.environ['SLACK_CHANNEL_ID']
-        client = WebClient(token=token)
-        response = client.chat_postMessage(channel =channel_id,text=msg)
-        assert response['ok'] == 'true', response ['error']
+def sendSlackMessage(msg):
+    token = os.environ['SLACK_API_TOKEN']
+    channel_id = os.environ['#crypto-alerts']
+    client = WebClient(token=token)
+    response = client.chat_postMessage(channel =channel_id,text=msg)
+    assert response['ok'] == 'true', response ['error']
     
 
-    if __name__ == '__main__':
-        LOG_FILE = os.environ['LOG_FILE']
-        logging.basicConfig(filename=LOG_FILE, level=logging.DEBUG)
-        update =checkPrices()
-        if update:
-            try:
-                sendSlackMessage(update)
+if __name__ == '__main__':
+    LOG_FILE = os.environ['LOG_FILE']
+    logging.basicConfig(filename=LOG_FILE, level=logging.DEBUG)
+    update =checkPrices()
+    if update:
+        try:
+            sendSlackMessage(update)
 
-            except Exception as err:
-                logging.error(err)
+        except Exception as err:
+            logging.error(err)
             
